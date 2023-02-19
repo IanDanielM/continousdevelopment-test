@@ -10,7 +10,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
-          run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh"
 workflows:
   flaskapp: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
