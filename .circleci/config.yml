@@ -7,14 +7,12 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
+          command: 
+            echo 'export PATH=~/.local/bin' >> $BASH_ENV && source $BASH_ENV
+            pip install user -r requirements.txt
       - run:
           name: Run tests
           command: |
-            . venv/bin/activate
             pytest
       
 workflows:
